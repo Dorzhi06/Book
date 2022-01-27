@@ -6,6 +6,12 @@ body {
     margin: auto;
 }
 
+header{
+    padding-left: 20px;
+    font-size: 50px;
+    background: violet;
+}
+
 .listData {
     font-size: 20;
     margin-top: 10px;
@@ -27,6 +33,7 @@ body {
     color: black;
 }
 
-.ShowPage{
+.testPage{
     background: white;
+    border-radius: 10px;
 }
