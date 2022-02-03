@@ -1,19 +1,39 @@
 body {
-    background: darkcyan;
+    background: #eeeeff;
 }
+
 .contentCenter{
     text-align: center;
     margin: auto;
 }
+.rowCenter{
+    margin-left: auto;
+    margin-right: auto;
+}
 
 header{
-    padding-left: 20px;
-    font-size: 50px;
-    background: violet;
+    background: #2c3762;
+}
+header h1{
+    color: white;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 30px;
+}
+img{
+    width: 70px;
+    margin: 5px;
+    margin-left: 50px;
+}
+
+#mainBlock
+{
+    margin-top: 30px;
 }
 
 .listData {
-    font-size: 20;
+    color: black;
+    font-size: 20px;
     margin-top: 10px;
     margin-left: 10px;
 }
@@ -34,6 +54,17 @@ header{
 }
 
 .testPage{
+    border-radius: 10px;
+}
+
+#ShowPage{
+    width: 1050px;
     background: white;
     border-radius: 10px;
+    box-shadow: 0 0 5px 5px rgba(221, 221, 221, 1);
+}
+
+@media only screen and (max-width: 800px)
+{
+    
 }
