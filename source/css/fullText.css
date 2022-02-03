@@ -21,4 +21,8 @@ p{
     .img{
         width: 80%;
     }
+    #ShowPage ul li{
+        font-size: 80%;
+        margin-left: 10px;
+    }
 }
