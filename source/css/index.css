@@ -94,7 +94,7 @@ img{
     header{
         font-size: 70%;
     }
-    img{
+    .logoImg{
         display: none;
     }
     .mainImage{
