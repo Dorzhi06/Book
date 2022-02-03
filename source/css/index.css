@@ -18,7 +18,7 @@ header h1{
     color: white;
     margin-top: auto;
     margin-bottom: auto;
-    font-size: 30px;
+    font-size: 150%;
 }
 img{
     width: 70px;
@@ -58,7 +58,7 @@ img{
 }
 
 #ShowPage{
-    width: 1050px;
+    margin-right: 20px;
     background: white;
     border-radius: 10px;
     box-shadow: 0 0 5px 5px rgba(221, 221, 221, 1);

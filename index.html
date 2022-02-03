@@ -14,92 +14,40 @@
 </head>
 <body>
     <header>
-        <div class="row">
-            <img src="source/img/Logo.svg">
-            <h1>Электронно методическое пособие по микроэлектроники и робототехники</h1>
+        <div class="col">
+            <div class="row">
+                <img src="source/img/Logo.svg" title="logo">
+                <h1>Электронно-методическое пособие по микроэлектронике и робототехнике</h1>
+            </div>
         </div>
     </header>
     <!-- Основной блок -->
     <section id="mainBlock">
-        <div class="row">
-            <div class="col-3 listData">
-                <h1>Содержание</h1>
-                <ul>1 глава Текст длинный очень
-                    <li><a href="#" id="setupPage">Установка Arduino</a></li>
-                    <li><a href="#" id="settingPage">Настройка Arduino</a></li>
-                    <li><a href="#" id="mainInfoPage">Основы</a></li>
-                </ul>
-                <ul>2 глава что то короткое
-                    <li><a href="#">Код какой то нибудь</a></li>
-                    <li><a href="#">ЧТО то ещё</a></li>
-                </ul>
-                <ul>3 глава press f
-                    <li><a href="#">Lorem ipsum dolor</a></li>
-                    <li><a href="#">Lorem ipsum dolor</a></li>
-                </ul>
-            </div>
-            <div class="row rowCenter">
-                <div class="col" id="ShowPage">
-                    <h1 class="contentCenter">Начало</h1>
+        <div class="col">
+            <div class="row">
+                <div class="col-3 listData">
+                    <h1>Содержание</h1>
+                    <ul>Раздел 1. Введение
+                        <li><a href="#" id="mainTermin">Гл. 1 Основные понятия</a></li>
+                        <li><a href="#" id="systemComponents">Гл. 2 Компоненты встроенных систем</a></li>
+                        <li><a href="#" id="microControllers">Гл. 3 Микроконтроллеры</a></li>
+                        <li><a href="#" id="programmerControllers">Гл. 4 Программирование микроконтролеров</a></li>
+                    </ul>
+                    <ul>2 глава что то короткое
+                        <li><a href="#">Код какой то нибудь</a></li>
+                        <li><a href="#">ЧТО то ещё</a></li>
+                    </ul>
+                    <ul>3 глава press f
+                        <li><a href="#">Lorem ipsum dolor</a></li>
+                        <li><a href="#">Lorem ipsum dolor</a></li>
+                    </ul>
+                </div>
+                <div class="col rowCenter" id="ShowPage">
+                        <h1 class="contentCenter">Начало</h1>
                 </div>
             </div>
         </div>
     </section>
 </body>
-<script type="text/javascript">
-    $('#setupPage').on('click', function(e)
-    {
-        e.preventDefault();
-        var data = $(this).serialize();
-        $.ajax
-        ({
-            url: 'pages/setupArduino.html', //Путь к файлу, который нужно подгрузить
-            type: 'GET',
-            success: function(responce)
-            {        
-                $('#ShowPage').html(responce); //Подгрузка внутрь блока с id=content
-            },
-            error: function()
-            {
-                alert('Error!');            
-            }
-        });
-    });
-    $('#settingPage').on('click', function(e)
-    {
-        e.preventDefault();
-        var data = $(this).serialize();
-        $.ajax
-        ({
-            url: 'pages/settingArduino.html', //Путь к файлу, который нужно подгрузить
-            type: 'GET',
-            success: function(responce)
-            {        
-                $('#ShowPage').html(responce); //Подгрузка внутрь блока с id=content
-            },
-            error: function()
-            {
-                alert('Error!');            
-            }
-        });
-    });
-    $('#mainInfoPage').on('click', function(e)
-    {
-        e.preventDefault();
-        var data = $(this).serialize();
-        $.ajax
-        ({
-            url: 'pages/mainArduino.html', //Путь к файлу, который нужно подгрузить
-            type: 'GET',
-            success: function(responce)
-            {        
-                $('#ShowPage').html(responce); //Подгрузка внутрь блока с id=content
-            },
-            error: function()
-            {
-                alert('Error!');            
-            }
-        });
-    });
-</script>
+<script type="text/javascript" src="source/js/mainScript.js"></script>
 </html>
