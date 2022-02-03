@@ -71,8 +71,19 @@ img{
 .menuShow{
     display: none;
 }
+
+.mainImage{
+    width: 80%;
+}
+#ShowPage h2{
+    font-size: 150%;
+}
+
 @media only screen and (max-width: 800px)
 {
+    #ShowPage h2{
+        font-size: 120%;
+    }
     .menuShow{
         display: unset;
         width: min-content;
@@ -85,6 +96,10 @@ img{
     }
     img{
         display: none;
+    }
+    .mainImage{
+        display: unset;
+        width: 80%;
     }
     .phone{
         display: unset;
@@ -146,7 +161,6 @@ img{
         z-index: 1;
         -webkit-user-select: none;
         user-select: none;
-        margin: 0 0 0 auto;
       }
       
       #menuToggle input
