@@ -1,0 +1,15 @@
+
+a.text:hover{
+  text-decoration: none;
+  color: white;
+}
+#ShowAnswer{
+    height: 150px;
+}
+@media only screen and (max-width: 800px)
+{
+a.text:hover{
+  text-decoration: none;
+  color: white;
+}
+}

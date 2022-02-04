@@ -1,0 +1,112 @@
+<h2 class="contentCenter mainText">Как начать комбинированную разработку</h2>
+<p>
+    <ul>Что для этого потребуется:
+        <li>потребуется скачать <a href="https://playground.arduino.cc/uploads/Interfacing/processing-arduino-0017.zip">библиотеку</a> для Processing-а и распаковать её в папку 
+            libraries/arduino в каталоге для скетчей Processing (при необходимости, каталоги нужно создать);</li>
+        <li>запустите Arduino IDE, откройте скетч из Examples -> Firmata -> StandardFirmata, откомпилируйте и загрузите его в свой контроллер Arduino/CraftDuino;</li>
+        <li>запустите Processing, откройте пример из папки libraries/arduino/examples/arduio_output через меню File -> Open;</li>
+        <li>запустите скетч на выполнение.</li>
+    </ul>
+</p>
+<p>
+Результатом работы скетча является окно состояния цифровых выходов ардуины рис. 19
+</p>
+<p class="contentCenter pImage">
+    <img class="img" src="../../source/img/image19.png" alt="image">
+</p>
+<p class="contentCenter pImage">
+    Рис. 19: Результат работы скетча
+</p>
+<p>
+    Каждый квадратик обозначает один цифровой выход от 13 до 0. Щелкая по нему, мы переключаем состояние межу HIGH и LOW.
+    Как помним, на плате Arduino/CraftDuino уже есть сигнальный светодиод L, подключённый к 13 порту — так что для 
+    того чтобы посмотреть работу данного примера дополнительные светодиоды необязательны.
+</p>
+<p>
+    Вот как это выглядит внутри скетча Processing:
+</p>
+<p class="offP">
+    import processing.serial.*;<br>
+
+    import cc.arduino.*;<br>
+
+    Arduino arduino;<br>
+
+    color off = color(4, 79, 111);<br>
+    color on = color(84, 145, 158);<br>
+
+    int[] values = { Arduino.LOW, Arduino.LOW, Arduino.LOW, Arduino.LOW,<br>
+    Arduino.LOW, Arduino.LOW, Arduino.LOW, Arduino.LOW, Arduino.LOW,<br>
+    Arduino.LOW, Arduino.LOW, Arduino.LOW, Arduino.LOW, Arduino.LOW };<br>
+
+    void setup() {<br>
+    size(470, 200);<br>
+    
+    println(Arduino.list());<br>
+    arduino = new Arduino(this, Arduino.list()[0], 57600);<br>
+    
+    for (int i = 0; i <= 13; i++)<br>
+        arduino.pinMode(i, Arduino.OUTPUT);<br>
+    }<br>
+
+    void draw() {<br>
+    background(off);<br>
+    stroke(on);<br>
+    
+    for (int i = 0; i <= 13; i++) {<br>
+        if (values[i] == Arduino.HIGH)<br>
+        fill(on);<br>
+        else<br>
+        fill(off);<br>
+        
+        rect(420 - i * 30, 30, 20, 20);<br>
+    }<br>
+    }<br>
+
+    void mousePressed()<br>
+    {<br>
+    int pin = (450 - mouseX) / 30;<br>
+    
+    if (values[pin] == Arduino.LOW) {<br>
+        arduino.digitalWrite(pin, Arduino.HIGH);<br>
+        values[pin] = Arduino.HIGH;<br>
+    } else {<br>
+        arduino.digitalWrite(pin, Arduino.LOW);<br>
+        values[pin] = Arduino.LOW;<br>
+    }<br>
+    }<br>
+</p>
+<p>
+    Как и в Wiring-е, сначала выполняется функция setup(), в которой создаётся объект Arduino:
+</p>
+<p>
+    arduino = new Arduino(this, Arduino.list()[0], 57600);
+</p>
+<p>
+    Первым аргументом в списке параметров конструктора идет this.
+    Вторым аргументом указывается порт, к которому подключен Arduino. Для его получения существует 
+    функция Arduino.list() — статическая (можно использовать без привязки к экземпляру объекта), возвращающая список 
+    портов. В данном примере, скетч будет подключаться к первому порту из этого списка (номер 0).
+    Последний — третий аргумент — скорость порта; скорость должна совпадать со скоростью 
+    установленной в скетче StandardFirmata, которая составляет 57600.
+</p>
+<p>
+    Далее, объект Arduino позволяет вызывать знакомые по Wiring-у методы.
+    Пример — перевод всех цифровых пинов в режим вывода:
+</p>
+<p>
+    for (int i = 0; i <= 13; i++)
+</p>
+<p>
+        arduino.pinMode(i, Arduino.OUTPUT);
+</p>
+<p>
+    Как уже упоминалось выше, Processing вместо знакомой функции loop(), для циклической работы использует функцию draw().
+    В данном примере, draw() выполняет перерисовку квадратиков по текущему состоянию значений выходов 
+    ардуины, которые хранятся в массиве values (массив инициализируется вверху скетча, значениями константы Arduino.LOW).
+</p>
+<p>
+    Функция mousePressed() — это обработчик событий от мыши. В ней, по координатам клика, вычисляется 
+    нужный квадрат, и инвертируется значение соответсвующей ячейки массива values, а затем вызывается метод 
+    digitalWrite(), чтобы изменить состояние выхода подключённого контроллера Arduino.
+</p>
