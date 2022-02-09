@@ -98,7 +98,8 @@ img{
         word-break: break-all;
     }
     header{
-        font-size: 50%;
+       font-size: 50%;
+       -webkit-text-size-adjust: 50%;
     }
     .logoImg{
         display: none;
