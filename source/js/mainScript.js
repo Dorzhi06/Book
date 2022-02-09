@@ -1,3 +1,22 @@
+    $('#logoImage').on('click', function(e)
+    {
+        e.preventDefault();
+        var data = $(this).serialize();
+        $.ajax
+        ({
+            url: './pages/mainPage/mainPage.html', 
+            type: 'GET',
+            success: function(responce)
+            {        
+                $('#ShowPage').html(responce); 
+            },
+            error: function()
+            {
+                alert('Error!');            
+            }
+        });
+    });
+
     // Введение телефон
     //Основные термины
 
