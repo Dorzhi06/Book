@@ -4,7 +4,7 @@
         var data = $(this).serialize();
         $.ajax
         ({
-            url: './pages/Round_3/1_mainFunction.html', 
+            url: './pages/Round_3/1_mainFuntion.html', 
             type: 'GET',
             success: function(responce)
             {        
@@ -120,7 +120,7 @@
         var data = $(this).serialize();
         $.ajax
         ({
-            url: './pages/Round_3/1_mainFunction.html', 
+            url: './pages/Round_3/1_mainFuntion.html', 
             type: 'GET',
             success: function(responce)
             {        
