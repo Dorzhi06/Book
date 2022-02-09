@@ -126,7 +126,8 @@ img{
         padding: 0;
       }
       ul {
-        font-size: 120%;
+        font-size: 170%;
+        -webkit-text-size-adjust: 170%;
         padding: 0px;
         padding-bottom: 8px;
         font-weight: bold;
@@ -140,6 +141,7 @@ img{
         color: #1E1E23;
         opacity:1;
         font-size: 100%;
+        -webkit-text-size-adjust: 100%;
         transition: 200ms;
       }
       
@@ -240,6 +242,11 @@ img{
         transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
       }
       
+      #menu h2{
+        font-size: 200%;
+        -webkit-text-size-adjust: 200%;
+      }
+
       #menu li
       {
         transition-delay: 2s;
