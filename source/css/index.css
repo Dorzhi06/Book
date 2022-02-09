@@ -85,7 +85,7 @@ img{
     font-size: 150%;
 }
 
-@media only screen and (max-width: 800px)
+@media only screen and (max-width: 1000px)
 {
     #ShowPage h2{
         font-size: 120%;
@@ -98,7 +98,7 @@ img{
         word-break: break-all;
     }
     header{
-        font-size: 70%;
+        font-size: 50%;
     }
     .logoImg{
         display: none;
@@ -163,7 +163,7 @@ img{
         flex-direction: column;
         position: relative;
         top: 42%;
-        left: 25px;
+        left: 50%;
         z-index: 1;
         -webkit-user-select: none;
         user-select: none;
