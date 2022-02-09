@@ -18,7 +18,7 @@ header h1{
     color: white;
     margin-top: auto;
     margin-bottom: auto;
-    font-size: 140%;
+    font-size: 200%;
 }
 img{
     width: 70px;
@@ -43,16 +43,16 @@ img{
     margin-left: 10px;
 }
 .listData h1{
-    font-size: 140%;
+    font-size: 180%;
     text-align: center;
 }
 .listData ul{
     padding-top: 5px;
-    font-size: 110%;
+    font-size: 130%;
     padding: 15px;
 }
 .listData ul li{
-    font-size: 90%;
+    font-size: 100%;
 }
 .listData ul a{
     color: black;
