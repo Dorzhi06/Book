@@ -25,19 +25,18 @@ img{
     margin: 5px;
     margin-left: 50px;
 }
-#logoImage{
-  font-size: 10%;
-}
 
 #mainBlock
 {
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .listData {
+    position: -webkit-sticky;
+      position: sticky;
+      top: 10px;
     overflow-y: scroll;
     height: 80vh;
-    -ms-overflow-style: none;
     color: black;
     font-size: 100%;
     margin-top: 10px;
@@ -163,7 +162,7 @@ img{
         display: flex;
         flex-direction: column;
         position: relative;
-        top: 25px;
+        top: 42%;
         left: 25px;
         z-index: 1;
         -webkit-user-select: none;
@@ -232,6 +231,7 @@ img{
         margin: -50px 0 0 -50px;
         padding: 50px;
         padding-top: 125px;
+        overflow-y: scroll;
         background-color: #F5F6FA;
         -webkit-font-smoothing: antialiased;
         transform-origin: 0% 0%;
