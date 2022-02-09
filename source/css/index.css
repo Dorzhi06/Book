@@ -126,8 +126,9 @@ img{
         padding: 0;
       }
       ul {
-        font-size: 170%;
-        -webkit-text-size-adjust: 170%;
+        font-size: 140%;
+        margin-left: 10px;
+        -webkit-text-size-adjust: 140%;
         padding: 0px;
         padding-bottom: 8px;
         font-weight: bold;
